@@ -30,6 +30,8 @@ defmodule Lutra.Web do
     quote do
       use Phoenix.Controller
 
+      alias Lutra.User
+
       alias Lutra.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]

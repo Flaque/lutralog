@@ -4,7 +4,7 @@ defmodule Lutra.User do
   schema "users" do
     field :username, :string
     field :password, :string
-
+    field :role,     :string
     timestamps
   end
 
