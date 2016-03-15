@@ -16,7 +16,8 @@ defmodule Lutra.Router do
   scope "/", Lutra do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PostController, :index
+
+    resources "/", LoginController, only: [:index, :create]
     resources "/posts", PostController do
         post "/comment", PostController, :add_comment
     end

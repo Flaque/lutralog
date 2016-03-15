@@ -1,0 +1,19 @@
+<div>
+
+  <h1> Lutra - The Elixir Multi-user Log</h1>
+
+  <h1>Login</h1>
+
+  <div id="login-wrapper">
+      <%= form_for @conn, login_path(@conn, :create), [as: :login_path], fn f -> %>
+        <div class="form-group">
+          <%= text_input f, :username, placeholder: "Username", class: "form-control big" %>
+        </div>
+        <div class="form-group">
+          <%= password_input f, :password, placeholder: "Password", class: "form-control big" %>
+        </div>
+        <%= submit "Log in", class: "btn btn-primary" %>
+      <% end %>
+  </div>
+
+</div>
