@@ -9,8 +9,12 @@ defmodule Lutra.LoginController do
 
   def create(conn, %{"login_path" => %{"username" => user, "password" => pass}}) do
     userModel = Lutra.Repo.one(from u in Lutra.User, where: u.username == ^user, where: u.password == ^pass)
-    if userModel != nil do
-      render conn, "index.html"
+    if userModel do
+      conn
+        |> redirect(to: post_path(conn, :index)) #Go to the post controller
+    else
+      conn
+        |> redirect(to: login_path(conn, :index)) #Just refresh the page
     end
   end
 
