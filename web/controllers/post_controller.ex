@@ -15,10 +15,11 @@ defmodule Lutra.PostController do
   end
 
   def index(conn, _params) do
+    role = get_session(conn, :role)
     posts = Post
     |> Post.count_comments
     |> Repo.all
-    render(conn, "index.html", posts: posts)
+    render(conn, "index.html", posts: posts,  role: role)
   end
 
   def new(conn, _params) do

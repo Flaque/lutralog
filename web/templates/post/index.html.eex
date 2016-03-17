@@ -9,12 +9,9 @@
     </tr>
   </thead>
   <tbody>
-
-
 <%= for {post, count} <- @posts do %>
     <tr>
       <td><%= post.title %></td>
-      <td><%= post.author %></td>
       <td><%= count %></td>
 
       <td class="text-right">
@@ -24,11 +21,10 @@
       </td>
     </tr>
 <% end %>
-
-
   </tbody>
 </table>
 
-<%= if @conn.assigns.role == "Admin" do %>
+
+<%= if @role == "Admin" do %>
   <%= link "New post", to: post_path(@conn, :new) %>
 <% end %>

@@ -10,8 +10,8 @@ defmodule Lutra.LoginController do
   def create(conn, %{"login_path" => %{"username" => user, "password" => pass}}) do
     userModel = Lutra.Repo.one(from u in Lutra.User, where: u.username == ^user, where: u.password == ^pass)
     if userModel do
-      assign(conn, :role, userModel.role)
       conn
+        |> put_session(:role, userModel.role)
         |> redirect(to: post_path(conn, :index)) #Go to the post controller
     else
       conn

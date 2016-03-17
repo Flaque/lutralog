@@ -5,6 +5,7 @@ defmodule Lutra.Post do
   schema "posts" do
     field :title, :string
     field :body, :string
+    field :author, :string
 
     has_many :comments, Lutra.Comment
 
