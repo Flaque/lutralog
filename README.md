@@ -1,5 +1,11 @@
 # Lutra
 
+[Install Elixir](http://elixir-lang.org/install.html)
+
+[Install Phoenix Framework](http://www.phoenixframework.org/docs/installation)
+
+[Install PostgreSQL](https://help.ubuntu.com/community/PostgreSQL)
+
 To start your this app:
 
   * Install dependencies with `mix deps.get`
